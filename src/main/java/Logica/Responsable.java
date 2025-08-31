@@ -5,33 +5,38 @@
 package Logica;
 
 import java.util.Date;
+import javax.persistence.Entity;
+import javax.persistence.OneToOne;
 
 /**
  *
  * @author massi
  */
+@Entity
 public class Responsable extends Persona{
-    private int idResponsable;
+    //private int idResponsable;
     private String typeResponsable;
+    @OneToOne
     private Paciente anPaciente;
 
     public Responsable() {
     }
 
-    public Responsable(int idResponsable, String typeResponsable, Paciente anPaciente, String name, String lastName, int tel, String address, Date dateBorn) {
-        super(name, lastName, tel, address, dateBorn);
-        this.idResponsable = idResponsable;
+    public Responsable(String typeResponsable, Paciente anPaciente, int id, String name, String lastName, int tel, String address, Date dateBorn) {
+        super(id, name, lastName, tel, address, dateBorn);
         this.typeResponsable = typeResponsable;
         this.anPaciente = anPaciente;
     }
 
-    public int getIdResponsable() {
-        return idResponsable;
-    }
+    
 
-    public void setIdResponsable(int idResponsable) {
+   /* public int getIdResponsable() {
+        return idResponsable;
+    }*/
+
+  /*  public void setIdResponsable(int idResponsable) {
         this.idResponsable = idResponsable;
-    }
+    }*/
 
     public String getTypeResponsable() {
         return typeResponsable;

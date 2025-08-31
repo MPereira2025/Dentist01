@@ -4,40 +4,48 @@
  */
 package Logica;
 
+import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
+import javax.persistence.Entity;
+import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 
 /**
  *
  * @author massi
  */
-public class Odontologo extends Persona{
-    private String idOdontologo;
+@Entity
+public class Odontologo extends Persona implements Serializable{
     private String especialidad;
+    @OneToMany(mappedBy="odonto")
     private List<Turno> listTurno;
+    @OneToOne
     private Usuario anUser;
+    @OneToOne
     private Horario anHorario;
 
     public Odontologo() {
     }
-    
-    public Odontologo(String idOdontologo, String especialidad, List<Turno> listTurno, Usuario anUser, Horario anHorario, String name, String lastName, int tel, String address, Date dateBorn) {
-        super(name, lastName, tel, address, dateBorn);
-        this.idOdontologo = idOdontologo;
+
+    public Odontologo(String especialidad, List<Turno> listTurno, Usuario anUser, Horario anHorario, int id, String name, String lastName, int tel, String address, Date dateBorn) {
+        super(id, name, lastName, tel, address, dateBorn);
         this.especialidad = especialidad;
         this.listTurno = listTurno;
         this.anUser = anUser;
         this.anHorario = anHorario;
     }
+    
+    
 
-    public String getIdOdontologo() {
+    /*public String getIdOdontologo() {
         return idOdontologo;
     }
 
     public void setIdOdontologo(String idOdontologo) {
         this.idOdontologo = idOdontologo;
     }
-
+*/
     public String getEspecialidad() {
         return especialidad;
     }

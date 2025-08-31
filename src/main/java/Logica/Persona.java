@@ -4,31 +4,55 @@
  */
 package Logica;
 
+import java.io.Serializable;
 import java.util.Date;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Inheritance;
+import javax.persistence.InheritanceType;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 /**
  *
  * @author massi
  */
-public class Persona {
-    
+@Entity
+@Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
+public class Persona implements Serializable {
+@Id
+@GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int id;
     private String name;
     private String lastName;
     private int tel;
     private String address;
+    @Temporal(TemporalType.DATE)
     private Date dateBorn;
 
     public Persona() {
     }
 
-    public Persona(String name, String lastName, int tel, String address, Date dateBorn) {
-        
+    public Persona(int id, String name, String lastName, int tel, String address, Date dateBorn) {
+        this.id = id;
         this.name = name;
         this.lastName = lastName;
         this.tel = tel;
         this.address = address;
         this.dateBorn = dateBorn;
     }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    
 
     
 

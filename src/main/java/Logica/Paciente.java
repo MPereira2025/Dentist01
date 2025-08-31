@@ -4,40 +4,48 @@
  */
 package Logica;
 
+import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
+import javax.persistence.Entity;
+import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 
 /**
  *
  * @author massi
  */
-public class Paciente extends Persona{
-    private int idPaciente;
+@Entity
+public class Paciente extends Persona implements Serializable{
+  //  private int idPaciente;
     private boolean tieneOS;
     private String typeBlood;
+    @OneToOne
     private Responsable anResponsable;
+    @OneToMany (mappedBy="pacien")
     private List<Turno> listTurno;
 
     public Paciente() {
     }
 
-    public Paciente(int idPaciente, boolean tieneOS, String typeBlood, Responsable anResponsable, List<Turno> listTurno, String name, String lastName, int tel, String address, Date dateBorn) {
-        super(name, lastName, tel, address, dateBorn);
-        this.idPaciente = idPaciente;
+    public Paciente(boolean tieneOS, String typeBlood, Responsable anResponsable, List<Turno> listTurno, int id, String name, String lastName, int tel, String address, Date dateBorn) {
+        super(id, name, lastName, tel, address, dateBorn);
         this.tieneOS = tieneOS;
         this.typeBlood = typeBlood;
         this.anResponsable = anResponsable;
         this.listTurno = listTurno;
     }
 
-    public int getIdPaciente() {
+    
+
+    /*public int getIdPaciente() {
         return idPaciente;
     }
 
     public void setIdPaciente(int idPaciente) {
         this.idPaciente = idPaciente;
     }
-
+*/
     public boolean isTieneOS() {
         return tieneOS;
     }
