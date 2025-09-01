@@ -4,6 +4,8 @@
  */
 package Persistencia;
 
+import Logica.Usuario;
+
 /**
  *
  * @author massi
@@ -17,4 +19,8 @@ public class ControladoraPersistencia {
     SecretarioJpaController secreJpa = new SecretarioJpaController();
     TurnoJpaController turnoJpa = new TurnoJpaController();
     UsuarioJpaController usuJpa = new UsuarioJpaController();
+
+    public void crearUsuario(Usuario usu) {
+        usuJpa.create(usu);
+    }
 }

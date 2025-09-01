@@ -22,11 +22,13 @@ public class Responsable extends Persona{
     public Responsable() {
     }
 
-    public Responsable(String typeResponsable, Paciente anPaciente, int id, String name, String lastName, int tel, String address, Date dateBorn) {
-        super(id, name, lastName, tel, address, dateBorn);
+    public Responsable(String typeResponsable, Paciente anPaciente, int id, String ci, String name, String lastName, int tel, String address, Date dateBorn) {
+        super(id, ci, name, lastName, tel, address, dateBorn);
         this.typeResponsable = typeResponsable;
         this.anPaciente = anPaciente;
     }
+
+    
 
     
 

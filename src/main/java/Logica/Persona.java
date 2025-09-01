@@ -25,6 +25,7 @@ public class Persona implements Serializable {
 @Id
 @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
+    private String ci; 
     private String name;
     private String lastName;
     private int tel;
@@ -35,14 +36,25 @@ public class Persona implements Serializable {
     public Persona() {
     }
 
-    public Persona(int id, String name, String lastName, int tel, String address, Date dateBorn) {
+    public Persona(int id, String ci, String name, String lastName, int tel, String address, Date dateBorn) {
         this.id = id;
+        this.ci = ci;
         this.name = name;
         this.lastName = lastName;
         this.tel = tel;
         this.address = address;
         this.dateBorn = dateBorn;
     }
+
+    public String getCi() {
+        return ci;
+    }
+
+    public void setCi(String ci) {
+        this.ci = ci;
+    }
+
+   
 
     public int getId() {
         return id;

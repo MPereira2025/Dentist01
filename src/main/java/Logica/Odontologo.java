@@ -28,13 +28,14 @@ public class Odontologo extends Persona implements Serializable{
     public Odontologo() {
     }
 
-    public Odontologo(String especialidad, List<Turno> listTurno, Usuario anUser, Horario anHorario, int id, String name, String lastName, int tel, String address, Date dateBorn) {
-        super(id, name, lastName, tel, address, dateBorn);
+    public Odontologo(String especialidad, List<Turno> listTurno, Usuario anUser, Horario anHorario, int id, String ci, String name, String lastName, int tel, String address, Date dateBorn) {
+        super(id, ci, name, lastName, tel, address, dateBorn);
         this.especialidad = especialidad;
         this.listTurno = listTurno;
         this.anUser = anUser;
         this.anHorario = anHorario;
     }
+
     
     
 

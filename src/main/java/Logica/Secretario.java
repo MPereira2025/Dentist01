@@ -21,11 +21,13 @@ public class Secretario extends Persona{
     public Secretario() {
     }
 
-    public Secretario(String sector, Usuario anUser, int id, String name, String lastName, int tel, String address, Date dateBorn) {
-        super(id, name, lastName, tel, address, dateBorn);
+    public Secretario(String sector, Usuario anUser, int id, String ci, String name, String lastName, int tel, String address, Date dateBorn) {
+        super(id, ci, name, lastName, tel, address, dateBorn);
         this.sector = sector;
         this.anUser = anUser;
     }
+
+    
 
    
 

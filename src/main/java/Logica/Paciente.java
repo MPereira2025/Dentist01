@@ -28,13 +28,15 @@ public class Paciente extends Persona implements Serializable{
     public Paciente() {
     }
 
-    public Paciente(boolean tieneOS, String typeBlood, Responsable anResponsable, List<Turno> listTurno, int id, String name, String lastName, int tel, String address, Date dateBorn) {
-        super(id, name, lastName, tel, address, dateBorn);
+    public Paciente(boolean tieneOS, String typeBlood, Responsable anResponsable, List<Turno> listTurno, int id, String ci, String name, String lastName, int tel, String address, Date dateBorn) {
+        super(id, ci, name, lastName, tel, address, dateBorn);
         this.tieneOS = tieneOS;
         this.typeBlood = typeBlood;
         this.anResponsable = anResponsable;
         this.listTurno = listTurno;
     }
+
+    
 
     
 
