@@ -40,4 +40,19 @@ public class Controladora {
     public void editarUsuario(Usuario usu) {
         controlPersis.editarUsuario(usu);
     }
+
+    public boolean comprobarIngreso(String usuario, String password) {
+        List<Usuario> listaUsuarios = new ArrayList<Usuario>();
+        listaUsuarios = controlPersis.getUsuarios();
+        boolean ingreso = false;
+        for(Usuario usu : listaUsuarios){
+            if(usu.getNombreUsuario().equals(usuario)){
+            if(usu.getPassword().equals(password)){
+                ingreso = true;
+            }
+            
+        }
+        }
+        return ingreso;
+    }
 }
